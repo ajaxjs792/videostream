@@ -1,0 +1,37 @@
+<div class="ui container">
+    <div class="row mobile">
+        <div
+            class="screen {{ status.toLocaleLowerCase() }}"
+            >
+            <app-mpeg-player
+                url="{{ streamHost }}"
+                protocol="{{ streamprotocol }}"
+            ></app-mpeg-player>
+            <div class="overlay" *ngIf="!isStreaming">
+                <div class="container">
+
+                    <div class="ui black icon big message stopped">
+                        <i class="hourglass half icon"></i>
+                        <div class="content">
+                            <div class="header">
+                                A transmissão não está em andamento no momento
+                            </div>
+                            <p>Se a transmissão estiver para inicar, aguarde alguns instantes...</p>
+                        </div>
+                    </div>
+
+                    <div class="ui icon black big message error">
+                        <i class="x icon"></i>
+                        <div class="content">
+                            <div class="header">
+                            Algo errado aconteceu
+                            </div>
+                            <p>Por favor, informe ao operador do dispositivo.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

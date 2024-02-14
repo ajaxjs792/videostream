@@ -1,0 +1,43 @@
+.viewer-root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+
+.viewer-content {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.running,
+.stopped,
+.error {
+    display: none;
+}
+
+.video-running .running,
+.video-stopped .stopped,
+.video-error .error {
+    display: block;
+}
+
+@media only screen and (max-width: 767px) {
+    .mobile.hidden {
+        display: none !important
+    }
+    .mobile.only.inline {
+        display: inline !important
+    }
+
+    .video-running .icon,
+    .video-stopped .icon,
+    .video-error .icon {
+        margin: 0;
+    }
+}

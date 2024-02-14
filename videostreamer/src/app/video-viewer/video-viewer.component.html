@@ -1,0 +1,53 @@
+<div class="viewer-root">
+    <div class="viewer-content">
+
+        <app-video></app-video>
+
+        <app-video-status-bar>
+            <app-video-status-bar-item type="status">
+                <div class="video-{{ status.toLocaleLowerCase() }}">
+                    <div class="ui basic large label running">
+                        <i class="record icon"></i>
+                        <span class="mobile hidden" >Transmitindo</span>
+                    </div>
+                    <div class="ui basic large label stopped">
+                        <i class="hourglass half icon"></i>
+                        <span class="mobile hidden" > Aguardando</span>
+                    </div>
+                    <div class="ui large red label error">
+                        <i class="x icon"></i>
+                        <span class="mobile hidden" > Erro</span>
+                    </div>
+                </div>
+            </app-video-status-bar-item>
+
+            <app-video-status-bar-item
+                type="status"
+                *ngIf="status == 'RUNNING'"
+                >
+                <div class="ui basic large label">
+                    <i class="users icon"></i>{{ watchingPeaple }}
+                </div>
+            </app-video-status-bar-item>
+
+            <app-video-status-bar-item type="action">
+                <a routerLink="/" class="ui circular compact icon button">
+                    <i class="home icon"></i>
+                </a>
+            </app-video-status-bar-item>
+
+            <app-video-status-bar-item type="action">
+                <button class="ui circular compact icon button">
+                    <i class="expand icon"></i>
+                </button>
+            </app-video-status-bar-item>
+
+            <app-video-status-bar-item type="action">
+                <a routerLink="/settings/stream" class="ui circular compact icon button">
+                    <i class="sliders horizontal icon"></i>
+                </a>
+            </app-video-status-bar-item>
+
+        </app-video-status-bar>
+    </div>
+</div>
